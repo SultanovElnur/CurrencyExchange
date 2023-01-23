@@ -8,6 +8,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 @Data
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class ExchangeDto {
 
     @Pattern(regexp = "^[a-zA-Z\\s]+")
