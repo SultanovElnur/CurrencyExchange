@@ -1,7 +1,8 @@
 package com.example.currencyexchanger.dto;
 
+@FieldDefaults(level = AccessLevel.PRIVATE
 class Query {
-    public String from;
-    public String to;
-    public int amount;
+     String from;
+     String to;
+     int amount;
 }
