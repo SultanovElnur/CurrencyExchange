@@ -6,12 +6,13 @@ import lombok.Data;
 import java.time.LocalDate;
 
 @Data
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class ExchangeResultDto {
-    public boolean success;
-    public Query query;
-    public Info info;
-    public boolean historical;
-    public LocalDate date;
-    public double result;
+     boolean success;
+     Query query;
+     Info info;
+     boolean historical;
+     LocalDate date;
+     double result;
 }
 
