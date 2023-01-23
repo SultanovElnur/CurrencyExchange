@@ -10,6 +10,7 @@ import java.time.LocalDate;
 @Table(name = "exchange_operation")
 @NoArgsConstructor
 @Data
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Operation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
