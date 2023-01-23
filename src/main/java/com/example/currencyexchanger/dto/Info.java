@@ -3,7 +3,8 @@ package com.example.currencyexchanger.dto;
 import lombok.Getter;
 
 @Getter
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Info {
-    public int timestamp;
-    public double quote;
+     int timestamp;
+     double quote;
 }
