@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="2" author="elnur_sln">
+        <preConditions>
+            <dbms type="postgresql"/>
+        </preConditions>
+
+        <createTable tableName="exchange_operation">
+            <column autoIncrement="true" name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="amount" type="float8"/>
+            <column name="client_name" type="varchar(255)"/>
+            <column name="currency_buy" type="varchar(50)"/>
+            <column name="currency_sell" type="varchar(50)"/>
+            <column name="fin" type="varchar(50)"/>
+            <column name="date" type="date"/>
+            <column name="quote" type="float8"/>
+            <column name="result" type="float8"/>
+        </createTable>
+
+    </changeSet>
+</databaseChangeLog>
