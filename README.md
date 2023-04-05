@@ -1,5 +1,3 @@
-# **CurrencyExchanger**
+# **PhoneBook**
 
-*This is a project for exchanging from one currency to another at the current exchange rate.
-The project uses a third-party application api.apilayer.com, Spring Security with roles. Also the Liquibase
-is implemented and the swagger is registered to the project.*
+*This project is a simple phone book application implemented in Java using the Spring Framework. The application allows the user to add, delete, and view contacts, as well as search for contacts by name or surname. A serialized file is used as the storage. The project contains configuration, service, and data model classes, as well as a class to run the application.*
