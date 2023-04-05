@@ -24,5 +24,19 @@
             <column name="result" type="float8"/>
         </createTable>
 
+        <createTable tableName="users">
+            <column autoIncrement="true" name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="user_name" type="varchar(50)">
+                <constraints unique="true" nullable="false"/>
+            </column>
+            <column name="first_name" type="varchar(255)"/>
+            <column name="last_name" type="varchar(255)"/>
+            <column name="email" type="varchar(100)"/>
+            <column name="password" type="varchar(255)"/>
+            <column name="role" type="varchar(50)"/>
+        </createTable>
+
     </changeSet>
 </databaseChangeLog>

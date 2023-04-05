@@ -5,5 +5,5 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
 		https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
-    <include file="V2023_02_12_changeset_exchange_operation.xml" relativeToChangelogFile="true"/>
+    <include file="V2023_02_12_changeset_default_tables.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>
