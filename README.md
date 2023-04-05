@@ -1,3 +1,6 @@
-# **PhoneBook**
+# **CurrencyExchanger**
 
-*This project is a simple phone book application implemented in Java using the Spring Framework. The application allows the user to add, delete, and view contacts, as well as search for contacts by name or surname. A serialized file is used as the storage. The project contains configuration, service, and data model classes, as well as a class to run the application.*
+*This project is a REST API for exchanging from one currency to another at the current exchange rate,
+developed in Java with Spring Boot framework. It integrates with a third-party server "api.apilayer.com"
+to fetch the latest currency exchange rates. The project also includes Spring Security with roles,
+Liquibase for database migrations, and Swagger for API documentation.*
