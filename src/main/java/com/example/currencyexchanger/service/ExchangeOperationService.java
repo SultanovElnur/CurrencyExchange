@@ -60,35 +60,21 @@ public class ExchangeOperationService {
         return result;
     }
 
-    public Map<String, Object> getAllOperations(int page, int size) {
+    public Map<String, Object> getAllOperations(String name, String amount, String date, int page, int size) {
         logger.info("Getting all operations INFO Message");
         Pageable pageable = PageRequest.of(page, size);
-        var operations = exchangeRepository.findAll(pageable);
-        return mapResult(operations);
-    }
+        Page<Operation> operations;
 
-    public Map<String, Object> getAllOperationsByName(String clientName, int page, int size) {
-        logger.info("Getting all operations by name INFO Message");
-        Pageable pageable = PageRequest.of(page, size);
-        var operations = exchangeRepository.findByClientName(clientName, pageable);
-        return mapResult(operations);
-    }
+        if (name != null) {
+            operations = exchangeRepository.findByClientName(name, pageable);
+        } else if (amount != null) {
+            operations = exchangeRepository.findByAmount(Double.valueOf(amount), pageable);
+        } else if (date != null) {
+            operations = exchangeRepository.findByDate(LocalDate.parse(date), pageable);
+        } else {
+            operations = exchangeRepository.findAll(pageable);
+        }
 
-    public Map<String, Object> getAllOperationsByAmount(String amount, int page, int size) {
-        logger.info("Getting all operations by amount INFO Message");
-        Pageable pageable = PageRequest.of(page, size);
-        var operations = exchangeRepository.findByAmount(Double.valueOf(amount), pageable);
-        return mapResult(operations);
-    }
-
-    public Map<String, Object> getAllOperationsByDate(String date, int page, int size) {
-        logger.info("Getting all operations by date INFO Message");
-        Pageable pageable = PageRequest.of(page, size);
-        var operations = exchangeRepository.findByDate(LocalDate.parse(date), pageable);
-        return mapResult(operations);
-    }
-
-    private Map<String, Object> mapResult(Page<Operation> operations) {
         return Map.of("operations", operations.getContent(),
                 "currentPage", operations.getNumber(),
                 "totalElements", operations.getTotalElements(),

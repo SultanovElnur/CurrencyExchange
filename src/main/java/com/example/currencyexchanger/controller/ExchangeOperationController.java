@@ -28,29 +28,12 @@ public class ExchangeOperationController {
 
     @GetMapping
     @ApiOperation(value = "This method is used to get all exchanged currencies")
-    public Map<String, Object> getAllOperations(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "5") int size) {
+    public Map<String, Object> getAllOperations(@RequestParam(required = false) String name,
+                                                @RequestParam(required = false) String amount,
+                                                @RequestParam(required = false) String date,
+                                                @RequestParam(defaultValue = "0") int page,
+                                                @RequestParam(defaultValue = "5") int size) {
 
-        return exchangeOperationService.getAllOperations(page, size);
-    }
-
-    @GetMapping("/client-name/{name}")
-    @ApiOperation(value = "This method is used to get by name all exchanged currencies")
-    public Map<String, Object> getAllOperationsByName(@PathVariable String name, @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "5") int size) {
-
-        return exchangeOperationService.getAllOperationsByName(name, page, size);
-    }
-
-    @GetMapping("/amount/{amount}")
-    @ApiOperation(value = "This method is used to get by amount all exchanged currencies")
-    public Map<String, Object> getAllOperationsByAmount(@PathVariable String amount, @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "5") int size) {
-
-        return exchangeOperationService.getAllOperationsByAmount(amount, page, size);
-    }
-
-    @GetMapping("/date/{date}")
-    @ApiOperation(value = "This method is used to get by date all exchanged currencies")
-    public Map<String, Object> getAllOperationsByDate(@PathVariable String date, @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "5") int size) {
-
-        return exchangeOperationService.getAllOperationsByDate(date, page, size);
+        return exchangeOperationService.getAllOperations(name, amount, date,page, size);
     }
 }
