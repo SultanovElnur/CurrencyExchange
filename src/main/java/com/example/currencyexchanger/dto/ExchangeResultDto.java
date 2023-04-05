@@ -1,7 +1,9 @@
 package com.example.currencyexchanger.dto;
 
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
 
@@ -14,5 +16,6 @@ public class ExchangeResultDto {
      boolean historical;
      LocalDate date;
      double result;
+
 }
 

@@ -49,7 +49,14 @@ public class ExchangeOperationService {
                 httpEntity,
                 ExchangeResultDto.class);
         var result = responseEntity.getBody();
-        exchangeRepository.save(new Operation(exchangeDto.getClientName(), exchangeDto.getFin(), exchangeDto.getCurrencySell(), exchangeDto.getCurrencyBuy(), exchangeDto.getAmount(), result.getInfo().getQuote(), result.getResult(), result.getDate()));
+        exchangeRepository.save(new Operation(
+                exchangeDto.getClientName(),
+                exchangeDto.getFin(),
+                exchangeDto.getCurrencySell(),
+                exchangeDto.getCurrencyBuy(),
+                exchangeDto.getAmount(),
+                result.getInfo().getQuote(),
+                result.getResult(), result.getDate()));
         return result;
     }
 
